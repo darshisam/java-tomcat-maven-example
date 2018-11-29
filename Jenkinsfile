@@ -20,7 +20,7 @@ node{
       }  
    
       stage('Publish Docker Image'){
-         withCredentials([string(credentialsId: 'sri*123)', variable: 'dockerPWD')]) {
+         withCredentials([string(credentialsId: 'dockerpwd_samdarshi', variable: 'dockerPWD_samdarshi')]) {
               sh "docker login -u samdarshi -p ${dockerPWD}"
          }
         sh 'docker push samdarshi/javatomcatsampledemo:2.0.0'
